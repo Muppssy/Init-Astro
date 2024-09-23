@@ -1,23 +1,101 @@
 ---
-// page About
+import "../styles/global.css";
+
+const pageTitle = "A propos";
+
+const identity = {
+  firstName: "Adrien",
+  country: "Corse",
+  occupation: "Developpeur junior",
+  hobbies: ["Game", "Informatique", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor = "#2196f3";
+const fontWeight = "bold";
+const textCase = "uppercase";
+const listStyle = "none";
+const bgColor = "#f2f2f2";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <h1>My Astro Site</h1>
-            <h1>About Me</h1>
-            <h2>... and my new Astro site!</h2>
-          
-            <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-          
-            <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-        	<a href="/">Home</a>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <style
+      define:vars={{ skillColor, fontWeight, textCase, listStyle, bgColor }}
+    >
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+        list-style: var(--listStyle);
+      }
+
+      .bgSection {
+        background: var(--bgColor);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    </style>
+
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <h1>{pageTitle}</h1>
+    <h2>Voici quelques faits sur moi</h2>
+
+    <ul>
+      <li>Mon nom est {identity.firstName} , je suis {identity.occupation}</li>
+      <li>J'habite en {identity.country}</li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Mes activités sont :{identity.hobbies[0]} et {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+
+    <h2>Mes Compétences</h2>
+    <div class="bgSection">
+      <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+      </ul>
+    </div>
+
+    <p>
+      I am working through Astro's introductory tutorial. This is the second
+      page on my website, and it's the first one I built myself!
+    </p>
+
+    <p>
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+  </body>
 </html>
