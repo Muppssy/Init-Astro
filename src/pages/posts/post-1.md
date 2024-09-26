@@ -1,13 +1,12 @@
 ---
-title: 'My First Blog Post'
+title: 'Creer un modpack Minecraft'
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 cover: '/what-is-astro-cover-image.webp'  
 tags: ["astro", "blogging", "learning in public"]
+layout: ../../layouts/MarkdownPostLayout.astro
 ---
-
-# My First Blog Post
 
 ![Cover Image](/what-is-astro-cover-image.webp) 
 

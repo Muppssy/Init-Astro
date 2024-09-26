@@ -1,10 +1,11 @@
 ---
-title: My Third Blog Post
-author: Astro Learner
+title: Tout savoir sur la doc Kubejs
+author: Calamity Jane
 description: "I had some challenges, but asking in the community really helped!"
 cover: '/astro3.png' 
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
+layout: ../../layouts/MarkdownPostLayout.astro
 ---
 
 ![Cover Image](/astro3.png) 
